@@ -117,7 +117,7 @@ restartButton.addEventListener("click", () => {
   secData.value = "00";
 
   // Reset the first click flag
-  isFirstClickOnPlay = false;
+  isFirstClickOnPlay = true;
   stopWatchCircle.style.backgroundImage = `conic-gradient(rgb(7, 53, 206) 360deg, rgb(237, 237, 237) 0deg)`;
 });
 
