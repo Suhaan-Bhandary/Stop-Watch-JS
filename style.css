@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #f6f6f6;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  width: 100%;
+  height: 60%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.stop-watch {
+  background-image: conic-gradient(rgb(7, 53, 206) 360deg, rgb(237, 237, 237) 0deg);
+
+  height: 50%;
+  aspect-ratio: 1/1;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stop-watch::before {
+  content: "";
+  width: 88%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.stop-watch-data {
+  position: absolute;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.stop-watch-data input {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #eee;
+
+  text-align: center;
+  width: 3rem;
+  font-size: 1.8rem;
+}
+
+.error {
+  font-size: 0.7rem;
+  color: red;
+}
+
+button {
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-inline: 5px;
+  vertical-align: middle;
+}
+
+button:hover,
+button:active {
+  background-color: initial;
+  background-position: 0 0;
+}
+
+button:active {
+  opacity: 0.5;
+}
+
+.play-btn {
+  background: #5bd35b;
+  border: 1px solid #5bd35b;
+}
+
+.play-btn:hover,
+.play-btn:active {
+  color: #5bd35b;
+}
+
+.pause-btn {
+  background: #ff971f;
+  border: 1px solid #ff971f;
+}
+
+.pause-btn:hover,
+.pause-btn:active {
+  color: #ff971f;
+}
+
+.restart-btn {
+  background: #ff4742;
+  border: 1px solid #ff4742;
+}
+
+.restart-btn:hover,
+.restart-btn:active {
+  color: #ff4742;
+}
+
+@media (min-width: 35em) {
+  .main-container {
+    width: 70%;
+  }
+}
+
+@media (min-width: 45em) {
+  .main-container {
+    width: 50%;
+  }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop Watch</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="stop-watch">
+        <div class="stop-watch-data">
+          <input id="min-data" type="text" value="00" /> :
+          <input id="sec-data" type="text" value="00" />
+        </div>
+      </div>
+      <p class="error"></p>
+
+      <div class="controls">
+        <button id="play" class="play-btn">Play</button>
+        <button id="pause" class="pause-btn">Pause</button>
+        <button id="restart" class="restart-btn">Restart</button>
+      </div>
+    </div>
+
+    <script src="sounds.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
