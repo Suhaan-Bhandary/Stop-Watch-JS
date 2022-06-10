@@ -30,6 +30,7 @@ body {
 }
 
 .stop-watch {
+  position: relative;
   background-image: conic-gradient(rgb(7, 53, 206) 360deg, rgb(237, 237, 237) 0deg);
 
   height: 50%;
@@ -54,6 +55,7 @@ body {
   position: absolute;
   font-size: 2rem;
   font-weight: bold;
+  text-align: center;
 }
 
 .stop-watch-data input {
@@ -62,7 +64,7 @@ body {
   border-bottom: 2px solid #eee;
 
   text-align: center;
-  width: 3rem;
+  width: 25%;
   font-size: 1.8rem;
 }
 
