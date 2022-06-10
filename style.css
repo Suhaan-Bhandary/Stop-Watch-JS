@@ -1,100 +1,123 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
+  display: flex;
+
   width: 100%;
   height: 100vh;
+
   background-color: #f6f6f6;
 
-  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .main-container {
+  display: flex;
+  flex-direction: column;
+
   width: 100%;
   height: 60%;
 
-  display: flex;
-  flex-direction: column;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+
   gap: 1rem;
   justify-content: center;
   align-items: center;
-
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 10px;
-  background-color: #ffffff;
 }
 
 .stop-watch {
   position: relative;
-  background-image: conic-gradient(rgb(7, 53, 206) 360deg, rgb(237, 237, 237) 0deg);
-
-  height: 50%;
-  aspect-ratio: 1/1;
-
-  border-radius: 50%;
 
   display: flex;
+
+  height: 50%;
+
+  border-radius: 50%;
+  background-image: conic-gradient(
+    rgb(7, 53, 206) 360deg,
+    rgb(237, 237, 237) 0deg
+  );
+
+  aspect-ratio: 1/1;
   justify-content: center;
   align-items: center;
 }
 
 .stop-watch::before {
-  content: "";
   width: 88%;
-  aspect-ratio: 1/1;
+
+  content: "";
+
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: #fff;
+
+  aspect-ratio: 1/1;
 }
 
 .stop-watch-data {
-  position: absolute;
   font-size: 2rem;
   font-weight: bold;
+
+  position: absolute;
+
   text-align: center;
 }
 
 .stop-watch-data input {
-  border: none;
-  outline: none;
-  border-bottom: 2px solid #eee;
+  font-size: 1.8rem;
+
+  width: 25%;
 
   text-align: center;
-  width: 25%;
-  font-size: 1.8rem;
+
+  border: none;
+  border-bottom: 2px solid #eee;
+}
+
+.stop-watch-data input:focus {
+  outline: none;
 }
 
 .error {
   font-size: 0.7rem;
+
   color: red;
 }
 
 button {
-  border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-block;
   font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
   font-size: 16px;
   font-weight: 800;
   line-height: 16px;
+
+  display: inline-block;
+
+  box-sizing: border-box;
   min-height: 40px;
-  outline: 0;
   padding: 12px 14px;
-  text-align: center;
-  text-rendering: geometricprecision;
-  text-transform: none;
-  user-select: none;
+
+  cursor: pointer;
   -webkit-user-select: none;
+  user-select: none;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: none;
+
+  color: #fff;
+  border-radius: 6px;
+  outline: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+
+  text-rendering: geometricprecision;
   touch-action: manipulation;
   margin-inline: 5px;
-  vertical-align: middle;
 }
 
 button:hover,
@@ -108,8 +131,8 @@ button:active {
 }
 
 .play-btn {
-  background: #5bd35b;
   border: 1px solid #5bd35b;
+  background: #5bd35b;
 }
 
 .play-btn:hover,
@@ -118,8 +141,8 @@ button:active {
 }
 
 .pause-btn {
-  background: #ff971f;
   border: 1px solid #ff971f;
+  background: #ff971f;
 }
 
 .pause-btn:hover,
@@ -128,8 +151,8 @@ button:active {
 }
 
 .restart-btn {
-  background: #ff4742;
   border: 1px solid #ff4742;
+  background: #ff4742;
 }
 
 .restart-btn:hover,
