@@ -9,9 +9,9 @@ const errorText = document.querySelector(".error");
 const minData = document.getElementById("min-data");
 const secData = document.getElementById("sec-data");
 
-// All the variables representing the state 
-let time = 0;
-let totalTime = 0;
+// All the variables representing the state
+let time = 5 * 60;
+let totalTime = 5 * 60; // Since the default time is 5 minutes
 let isFirstClickOnPlay = true;
 let countDownInterval = null;
 
@@ -113,8 +113,11 @@ restartButton.addEventListener("click", () => {
   countDownInterval = null;
 
   errorText.textContent = "";
-  minData.value = "00";
-  secData.value = "00";
+  let minutes = Math.floor(parseInt(totalTime) / 60);
+  let seconds = parseInt(totalTime) % 60;
+
+  minData.value = minutes < 10 ? "0" + minutes : minutes;
+  secData.value = seconds < 10 ? "0" + seconds : seconds;
 
   // Reset the first click flag
   isFirstClickOnPlay = true;
