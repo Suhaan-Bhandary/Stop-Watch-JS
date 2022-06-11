@@ -81,9 +81,11 @@ playButton.addEventListener("click", () => {
     // Update the ui
     if (totalTime != 0) {
       let circleDegree = (time / totalTime) * 360;
-      console.log(circleDegree, time, totalTime);
+      // console.log(circleDegree, time, totalTime);
 
-      stopWatchCircle.style.backgroundImage = `conic-gradient(rgb(7, 53, 206) ${circleDegree}deg, rgb(237, 237, 237) 0deg)`;
+      let color = "rgb(7, 53, 206)";
+      if ((time / totalTime) * 100 < 30) color = "#ff4742";
+      stopWatchCircle.style.backgroundImage = `conic-gradient(${color} ${circleDegree}deg, rgb(237, 237, 237) 0deg)`;
     }
 
     let minutes = Math.floor(parseInt(time) / 60);
