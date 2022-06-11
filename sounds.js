@@ -5,14 +5,27 @@ class SoundManager {
     this.alarmSound = new Audio("./sounds/emergency_alarm.mp3");
 
     this.clockSound.addEventListener("ended", this.playClockSound, false);
-    this.alarmSound.addEventListener("ended", this.playAlarmSound, false);
+    this.alarmSoundReplayListner = this.alarmSound.addEventListener("ended", this.playAlarmSound, false);
   }
 
+  
   playButtonClickSound = () => {
     this.buttonSound.play();
   };
 
+  changeAlarmSound = (location) => { 
+    // removing the event listener before changing the sound
+    this.alarmSound.removeEventListener("ended", this.alarmSoundReplayListner);
+
+    // Changing teh alarmSound
+    this.alarmSound = new Audio(location);
+
+    // Adding new listeners to the audio 
+    this.alarmSoundReplayListner = this.alarmSound.addEventListener("ended", this.playAlarmSound, false);
+  }
+  
   playAlarmSound = () => {
+    console.log("Sound");
     this.alarmSound.currentTime = 0;
     this.alarmSound.play();
   };

@@ -7,9 +7,18 @@
     <title>Stop Watch</title>
 
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="main-container">
+      <div class="song-input">
+        <input type="file" accept="audio/*" id="audio-input" />
+        <i class="bx bxs-music" id="audio-trigger"></i>
+      </div>
+
       <div class="stop-watch">
         <div class="stop-watch-data">
           <input id="min-data" type="number" value="05" min="0" max="99" /> :
@@ -26,6 +35,7 @@
     </div>
 
     <script src="sounds.js"></script>
+    <script src="alarmSoundInput.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

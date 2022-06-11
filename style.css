@@ -17,6 +17,7 @@ body {
 }
 
 .main-container {
+  position: relative;
   display: flex;
   flex-direction: column;
 
@@ -30,6 +31,32 @@ body {
   gap: 1rem;
   justify-content: center;
   align-items: center;
+}
+
+.song-input {
+}
+
+#audio-input {
+  display: none;
+}
+
+#audio-trigger {
+  position: absolute;
+  cursor: pointer;
+  top: 5px;
+  right: 5px;
+  padding: 4px;
+  font-size: 1.2rem;
+}
+
+#audio-trigger.active {  
+  background: #1ca8ea;
+  background: -webkit-linear-gradient(top left, #1ca8ea, #8049a2);
+  background: -moz-linear-gradient(top left, #1ca8ea, #8049a2);
+  background: linear-gradient(to bottom right, #1ca8ea, #8049a2);
+  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .stop-watch {
@@ -86,14 +113,14 @@ body {
 }
 
 /* Chrome, Safari, Edge, Opera */
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
