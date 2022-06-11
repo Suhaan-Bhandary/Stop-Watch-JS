@@ -64,6 +64,10 @@ playButton.addEventListener("click", () => {
   // Play the clock sound
   sound.playClockSound();
 
+  // Disable the input fields
+  minData.disabled = true;
+  secData.disabled = true;
+
   countDownInterval = setInterval(() => {
     time -= 1;
     if (time == 0) {
@@ -122,6 +126,10 @@ restartButton.addEventListener("click", () => {
   // Reset the first click flag
   isFirstClickOnPlay = true;
   stopWatchCircle.style.backgroundImage = `conic-gradient(rgb(7, 53, 206) 360deg, rgb(237, 237, 237) 0deg)`;
+
+  // Disable the input fields
+  minData.disabled = false;
+  secData.disabled = false;
 });
 
 minData.addEventListener("input", isValidInputData);
