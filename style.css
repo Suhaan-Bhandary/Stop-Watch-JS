@@ -49,12 +49,12 @@ body {
   font-size: 1.2rem;
 }
 
-#audio-trigger.active {  
+#audio-trigger.active {
   background: #1ca8ea;
   background: -webkit-linear-gradient(top left, #1ca8ea, #8049a2);
   background: -moz-linear-gradient(top left, #1ca8ea, #8049a2);
   background: linear-gradient(to bottom right, #1ca8ea, #8049a2);
-  
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -176,33 +176,75 @@ button:active {
 }
 
 .play-btn {
-  border: 1px solid #5bd35b;
-  background: #5bd35b;
+  --btn-color: #5bd35b;
+
+  border: 1px solid var(--btn-color);
+  background: var(--btn-color);
 }
 
 .play-btn:hover,
 .play-btn:active {
-  color: #5bd35b;
+  color: var(--btn-color);
 }
 
 .pause-btn {
-  border: 1px solid #ff971f;
-  background: #ff971f;
+  --btn-color: #ff971f;
+
+  border: 1px solid var(--btn-color);
+  background: var(--btn-color);
 }
 
 .pause-btn:hover,
 .pause-btn:active {
-  color: #ff971f;
+  color: var(--btn-color);
 }
 
 .restart-btn {
-  border: 1px solid #ff4742;
-  background: #ff4742;
+  --btn-color: #ff4742;
+
+  border: 1px solid var(--btn-color);
+  background: var(--btn-color);
 }
 
 .restart-btn:hover,
 .restart-btn:active {
-  color: #ff4742;
+  color: var(--btn-color);
+}
+
+/* Button Ripple Effect */
+.ripple-btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  --x: 0px;
+  --y: 0px;
+}
+
+.ripple-btn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: var(--btn-color);
+  z-index: -1;
+  opacity: 0.5;
+  border-radius: 50%;
+
+  top: var(--y);
+  left: var(--x);
+
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.ripple-btn.active::before {
+  animation: ripple-effect 0.5s;
+}
+
+@keyframes ripple-effect {
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+  }
 }
 
 @media (min-width: 35em) {
